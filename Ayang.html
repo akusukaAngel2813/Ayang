@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan untuk Sayangku</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        /* Background yang diburamkan */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://tse4.mm.bing.net/th?id=OIG1.OA8Cef.hyEGCoGduWw_c&pid=ImgGn");
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 50px 0;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Section yang muncul setelah tombol diklik */
+        .section {
+            display: none; /* Sembunyikan secara default */
+            opacity: 0;
+            transition: opacity 0.8s ease-out; /* Transisi animasi muncul */
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .section--active {
+            display: block; /* Muncul setelah tombol diklik */
+            opacity: 1; /* Tampak dengan animasi */
+        }
+
+        /* Desain balon percakapan dengan gradien */
+        .balloon {
+            position: relative;
+            padding: 15px 25px;
+            margin: 10px auto;
+            color: #000;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: auto;
+            max-width: 75%;
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.4;
+            display: inline-block;
+        }
+
+        .balloon.left {
+            background: linear-gradient(90deg, hsla(300, 100%, 89%, 1) 0%, hsla(180, 100%, 93%, 1) 100%);
+            margin-left: 10px;
+        }
+
+        .button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: #FF69B4;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            width: 200px;
+            transition: transform 0.5s ease-in-out, background-color 0.3s ease, opacity 0.3s ease;
+        }
+
+        .button:active {
+            transform: scale(0.9);
+        }
+
+        .button:hover {
+            background-color: #FF1493;
+            box-shadow: 0px 0px 10px 5px #fff;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 600px) {
+            .button {
+                width: 150px;
+            }
+
+            .balloon {
+                max-width: 90%;
+            }
+        }
+
+        /* Teks yang akan ditampilkan di akhir */
+        .final-message {
+            display: none; /* Sembunyikan secara default */
+            opacity: 0;
+            transition: opacity 0.8s ease-out; /* Transisi animasi muncul */
+        }
+
+        .final-message--active {
+            display: block; /* Muncul setelah tombol diklik */
+            opacity: 1; /* Tampak dengan animasi */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div class="content">
+        <!-- Tombol awal -->
+        <section class="section section--active" id="section-0">
+            <h1>Pesan untuk Sayangku</h1>
+            <button class="button" onclick="showNextSection('section-1')">Tekan Aku😖✨</button>
+        </section>
+
+        <section class="section" id="section-1">
+            <div class="balloon left">
+                Hai Sayangku! Setiap kali aku memikirkanmu, hidupku terasa lebih berwarna. Every moment that we share baik itu vidcall yang panjang, chatting yang penuh tawa, atau kenangan manis lainnya semuanya sangat berharga. Kamu itu luar biasa, dan dukunganmu bikin aku merasa lebih kuat dalam menghadapi berbagai tantangan.
+            </div>
+            <button class="button" onclick="showNextSection('section-2')">Lanjut</button>
+        </section>
+
+        <section class="section" id="section-2">
+            <div class="balloon left">
+                Kadang aku mikir, "Why do we have to be so far apart?" Jarak ini memang sulit dan terkadang membuat kita merasa kesepian, tetapi aku percaya kita bisa menghadapi semuanya bersama-sama. Even though we can’t meet every day, kamu selalu ada di pikiranku. Jika ada kalanya aku bikin kamu merasa tidak nyaman, I’m really sorry. Kebahagiaanmu sangat penting buatku, dan aku akan selalu berusaha untuk menjaga senyummu.
+            </div>
+            <button class="button" onclick="showNextSection('section-3')">Lanjut</button>
+        </section>
+
+        <section class="section" id="section-3">
+            <div class="balloon left">
+                Aku punya pantun spesial buat kamu:<br>
+                Obat diramu banyak bahannya<br>
+                Campur mentega enak rasanya<br>
+                Cinta untukmu tiada duanya<br>
+                Kan ku jaga selama-lamanya. 💖
+            </div>
+            <button class="button" onclick="showNextSection('section-4')">Lanjut</button>
+        </section>
+
+        <section class="section" id="section-4">
+            <div class="balloon left">
+                Kamu adalah Cintaku dalam hidupku. Seeing your face, even through the screen, always brightens my day. Aku ingin kita terus tumbuh bersama, saling mendukung, dan membangun masa depan yang penuh kebahagiaan dan impian. Aku berharap suatu saat kita bisa menikah dan menghabiskan sisa hidup kita bersama. Bayangkan, kita bangun setiap pagi, masak sarapan bareng, dan menikmati waktu bersama sambil bercanda. "Kamu tahu nggak, Bububku? Kita itu seperti dua buah magnet, selalu menarik satu sama lain!" 🧲❤️
+            </div>
+            <button class="button" onclick="showNextSection('section-5')">Lanjut</button>
+        </section>
+
+        <section class="section" id="section-5">
+            <div class="balloon left">
+                Aku ingin kita berbagi banyak kenangan indah, dari perjalanan yang kita impikan hingga momen-momen kecil yang bikin kita ngakak. Dan jangan lupa, "Kalau kamu adalah bintang, aku pasti jadi langit, karena kita saling melengkapi!" 🌟🌌
+            </div>
+            <button class="button" onclick="showNextSection('section-6')">Lanjut</button>
+        </section>
+
+        <section class="section" id="section-6">
+            <div class="balloon left">
+                Semoga cinta kita terus tumbuh dan berkembang, menjadi kisah yang tak akan pernah pudar. Aku mencintaimu, my Lovely Angel! I can’t wait for all the beautiful moments we’ll share in the future, setiap langkah yang kita ambil bersama, dan semua impian yang akan kita wujudkan. Kamu adalah segalanya bagiku, dan aku akan selalu ada untukmu, sekarang dan selamanya. 💕
+            </div>
+            <button class="button" onclick="showFinalMessage()">Selesai</button>
+        </section>
+
+        <!-- Section untuk menampilkan seluruh pesan -->
+        <div class="final-message" id="final-message">
+            <h1>Pesan untuk Sayangku</h1>
+            <div class="balloon left">
+                Hai Sayangku! Setiap kali aku memikirkanmu, hidupku terasa lebih berwarna. Every moment that we share baik itu vidcall yang panjang, chatting yang penuh tawa, atau kenangan manis lainnya semuanya sangat berharga. Kamu itu luar biasa, dan dukunganmu bikin aku merasa lebih kuat dalam menghadapi berbagai tantangan.<br><br>
+                Kadang aku mikir, "Why do we have to be so far apart?" Jarak ini memang sulit dan terkadang membuat kita merasa kesepian, tetapi aku percaya kita bisa menghadapi semuanya bersama-sama. Even though we can’t meet every day, kamu selalu ada di pikiranku. Jika ada kalanya aku bikin kamu merasa tidak nyaman, I’m really sorry. Kebahagiaanmu sangat penting buatku, dan aku akan selalu berusaha untuk menjaga senyummu.<br><br>
+                Aku punya pantun spesial buat kamu:<br>
+                Obat diramu banyak bahannya<br>
+                Campur mentega enak rasanya<br>
+                Cinta untukmu tiada duanya<br>
+                Kan ku jaga selama-lamanya. 💖<br><br>
+                Kamu adalah Cintaku dalam hidupku. Seeing your face, even through the screen, always brightens my day. Aku ingin kita terus tumbuh bersama, saling mendukung, dan membangun masa depan yang penuh kebahagiaan dan impian. Aku berharap suatu saat kita bisa menikah dan menghabiskan sisa hidup kita bersama. Bayangkan, kita bangun setiap pagi, masak sarapan bareng, dan menikmati waktu bersama sambil bercanda. "Kamu tahu nggak, Bububku? Kita itu seperti dua buah magnet, selalu menarik satu sama lain!" 🧲❤️<br><br>
+                Aku ingin kita berbagi banyak kenangan indah, dari perjalanan yang kita impikan hingga momen-momen kecil yang bikin kita ngakak. Dan jangan lupa, "Kalau kamu adalah bintang, aku pasti jadi langit, karena kita saling melengkapi!" 🌟🌌<br><br>
+                Semoga cinta kita terus tumbuh dan berkembang, menjadi kisah yang tak akan pernah pudar. Aku mencintaimu, my Lovely Angel! I can’t wait for all the beautiful moments we’ll share in the future, setiap langkah yang kita ambil bersama, dan semua impian yang akan kita wujudkan. Kamu adalah segalanya bagiku, dan aku akan selalu ada untukmu, sekarang dan selamanya. 💕
+            </div>
+            <!-- Tombol "Tekan Aku" yang mengarahkan ke link -->
+            <a href="https://wa.chatfuel.com/justme" target="_blank" class="button">Tekan Aku🥺💗</a>
+        </div>
+
+    </div>
+
+    <script>
+        // Fungsi untuk menampilkan section berikutnya
+        function showNextSection(nextSectionId) {
+            const currentSection = document.querySelector('.section--active');
+            const nextSection = document.getElementById(nextSectionId);
+            
+            // Sembunyikan section yang sedang aktif
+            if (currentSection) {
+                currentSection.classList.remove('section--active');
+            }
+            // Tampilkan section berikutnya dengan animasi
+            if (nextSection) {
+                nextSection.classList.add('section--active');
+                nextSection.style.opacity = 0; // Atur opacity ke 0 untuk transisi
+                setTimeout(() => {
+                    nextSection.style.opacity = 1; // Setelah sedikit waktu, ubah opacity ke 1
+                }, 10); // Delay kecil untuk memicu transisi
+            }
+        }
+
+        // Fungsi untuk menampilkan pesan akhir
+        function showFinalMessage() {
+            const currentSection = document.querySelector('.section--active');
+            const finalMessage = document.getElementById('final-message');
+
+            // Sembunyikan section yang sedang aktif
+            if (currentSection) {
+                currentSection.classList.remove('section--active');
+            }
+            // Tampilkan pesan akhir
+            finalMessage.classList.add('final-message--active');
+        }
+    </script>
+
+</body>
+</html>
