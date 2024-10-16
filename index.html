@@ -33,7 +33,7 @@
         .content {
             position: relative;
             z-index: 1;
-            padding: 50px 0;
+            padding: 50px 20px; /* Tambahkan padding di sisi kiri dan kanan */
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
@@ -59,10 +59,10 @@
             padding: 15px 25px;
             margin: 10px auto;
             color: #000;
-            border-radius: 50px;
+            border-radius: 20px; /* Mengubah bentuk balon untuk lebih bulat */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: auto;
-            max-width: 75%;
+            max-width: 85%; /* Lebar maksimum balon */
             text-align: left;
             font-size: 16px;
             line-height: 1.4;
@@ -105,7 +105,12 @@
             }
 
             .balloon {
-                max-width: 90%;
+                max-width: 90%; /* Lebar maksimum balon untuk perangkat kecil */
+                font-size: 14px; /* Ukuran font lebih kecil di perangkat kecil */
+            }
+
+            .content {
+                padding: 50px 10px; /* Mengurangi padding pada perangkat kecil */
             }
         }
 
